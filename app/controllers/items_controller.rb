@@ -44,7 +44,7 @@ class ItemsController < ApplicationController
 
     if @item.save
       flash[:notice] = "Your item was successfully added to your inventory"
-      redirect_to [@topic, @post]
+      redirect_to([@item.topic, @item])
     else
       flash.now[:alert] = "Sorry something went wrong, please try again."
       render(:edit)
